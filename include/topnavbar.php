@@ -11,6 +11,7 @@ $sqlusertype = "SELECT `type` FROM `tbl_user_type` WHERE `idtbl_user_type`='$ses
 $resultusertype = $conn->query($sqlusertype);
 $rowusertype = $resultusertype->fetch_assoc();
 ?>
+
 <style>
     .badge {
         background: red;
@@ -19,7 +20,7 @@ $rowusertype = $resultusertype->fetch_assoc();
     }
 </style>
 <nav class="topnav navbar navbar-expand shadow navbar-light bg-laugfs" id="sidenavAccordion">
-    <a class="navbar-brand d-none d-sm-block menu-logo" href="#">Everest Hardware (Pvt) Ltd</a><button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle" href="#"><i class="text-dark" data-feather="menu"></i></button>
+    <a class="navbar-brand d-none d-sm-block menu-logo" href="#">SK Marketing (Pvt) Ltd</a><button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle" href="#"><i class="text-dark" data-feather="menu"></i></button>
 
     <ul class="navbar-nav align-items-center ml-auto">
     <div style="margin-right: 20px;">

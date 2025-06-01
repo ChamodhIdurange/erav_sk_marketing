@@ -79,12 +79,13 @@ $html = '
         }
     </style>
 </head>
+
 <body>
     <div>
-        <h2 style="text-align: center;">EVEREST HARDWARE PRIVATE LIMITED</h2>
+        <h2 style="text-align: center;">SK Marketing PRIVATE LIMITED</h2>
         <p style="text-align: center;">363/10/01, Malwatta, Kal-Eliya, Mirigama.<br>
         Tel: 033 4 950 951, Mobile: 0772710710, FAX: 0372221580<br>
-        E-Mail: info@everesthardware.lk  Web: www.everesthardware.lk</p>
+        E-Mail: info@skmarketing.lk  Web: www.skmarketing.lk</p>
     </div>
     <hr>
     <div style="text-align: center;">

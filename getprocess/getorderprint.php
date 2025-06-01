@@ -13,7 +13,6 @@ $orderdate=$roworder['orderdate'];
 $sqlordercount="SELECT COUNT(*) AS `count` FROM `tbl_porder` WHERE `orderdate`='$orderdate'";
 $resultordercount=$conn->query($sqlordercount);
 $rowordercount=$resultordercount->fetch_assoc();
-
 $sqlorderinfo="SELECT `tbl_porder_detail`.*, `tbl_product`.`product_name`, `tbl_product`.`product_code` FROM `tbl_porder_detail` LEFT JOIN `tbl_product` ON `tbl_product`.`idtbl_product`=`tbl_porder_detail`.`tbl_product_idtbl_product` WHERE `tbl_porder_detail`.`status`=1 AND `tbl_porder_detail`.`tbl_porder_idtbl_porder`='$orderID'";
 $resultorderinfo=$conn->query($sqlorderinfo);
 
@@ -28,6 +27,7 @@ while($rowaccessories=$resultaccessories->fetch_assoc()){
     array_push($arrayaccessories, $objaccessories);
 }
 
+
 ?>
 <div class="row">
     <div class="col-8 small">
@@ -35,7 +35,7 @@ while($rowaccessories=$resultaccessories->fetch_assoc()){
             <tbody>
                 <tr>
                     <td>
-                        <h3 class="font-weight-light m-0">EVEREST HARDWARE CO. (PVT) LTD;</h3>
+                        <h3 class="font-weight-light m-0">SK Marketing CO. (PVT) LTD;</h3>
                         <h4 class="mt-2">#363/10/01, Malwatte, Kal-Eliya (Mirigama).</h4>
                     </td>
                     <td>&nbsp;</td>

@@ -89,8 +89,9 @@
         }
     }
 
+    
     $(document).on("click", ".btntableaction", function () {
-        var url = 'http://localhost/ERAV%20Techonology%20Projects/Everast_New/Everast_Garment/everast_new/'+$(this).attr("data-url");
+        var url = 'http://localhost/ERAV%20Techonology%20Projects/SkMarketing/'+$(this).attr("data-url");
         var actiontype = $(this).attr("data-actiontype");
 
         var title;

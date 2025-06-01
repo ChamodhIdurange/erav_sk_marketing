@@ -31,6 +31,7 @@ $resultinvoiceoutstanding=$conn->query($sqlinvoiceoutstanding);
 $sqlinvoicedetailfree="SELECT `tbl_product`.`product_name`, `tbl_invoice_detail`.`freeqty` FROM `tbl_invoice_detail` LEFT JOIN `tbl_product` ON `tbl_product`.`idtbl_product`=`tbl_invoice_detail`.`freeproductid` WHERE `tbl_invoice_detail`.`tbl_invoice_idtbl_invoice`='$recordID' AND `tbl_invoice_detail`.`status`=1 AND `tbl_invoice_detail`.`freeqty`>0";
 $resultinvoicedetailfree=$conn->query($sqlinvoicedetailfree);
 
+
 ?>
 <div class="row">
     <div class="col-12">
@@ -40,11 +41,11 @@ $resultinvoicedetailfree=$conn->query($sqlinvoicedetailfree);
                     <td>&nbsp;</td>
                     <td class="text-right"><img src="images/logo.png" width="80" height="80" class="img-fluid"></td>
                     <td colspan="4" class="text-center small align-middle">
-                        <h2 class="font-weight-light m-0">Everest Hardware (Pvt) Ltd</h2>
-                        Head Office : No.J174/20,Araliya Uyana,Kegalla.<br>
-                        Branch : No.107,Paragammana,Kegalla.<br>
-                        Tel: 0094-35-2232924 | 779901546 Email: sales@everesthardware.com<br>
-                        Web: www.everesthardware.com | www.facebook.com/Everest Hardware
+                        <h2 class="font-weight-light m-0">SK Marketing (Pvt) Ltd</h2>
+                        7, 14 Ilupugedara Rd, Kurunegala 60000.<br>
+                        Branch : Kurunegala<br>
+                        Tel: 070 362 5015 Email: sales@skmarketing.com<br>
+                        Web: www.skmarketing.com | www.facebook.com/SK Marketing
                     </td>
                     <td>&nbsp;</td>
                 </tr>

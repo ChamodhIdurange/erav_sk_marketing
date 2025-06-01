@@ -5,7 +5,6 @@ include "connection/db.php";
 $sqlcustomer = "SELECT `idtbl_customer`, `name` FROM `tbl_customer` WHERE `status`=1 ORDER BY `name` ASC";
 $resultcustomer = $conn->query($sqlcustomer);
 
-
 $sqlrep = "SELECT `idtbl_employee`, `name` FROM `tbl_employee` WHERE `status`=1 ORDER BY `name` ASC";
 $resultrep = $conn->query($sqlrep);
 
@@ -241,18 +240,18 @@ include "include/topnavbar.php";
                         "buttons": [{
                                 extend: 'csv',
                                 className: 'btn btn-success btn-sm',
-                                title: 'Everest Outstanding Report Information',
+                                title: 'SK Hardware Outstanding Report Information',
                                 text: '<i class="fas fa-file-csv mr-2"></i> CSV'
                             },
                             {
                                 extend: 'pdf',
                                 className: 'btn btn-danger btn-sm',
-                                title: 'Everest Outstanding Report Information',
+                                title: 'SK Hardware Outstanding Report Information',
                                 text: '<i class="fas fa-file-pdf mr-2"></i> PDF'
                             },
                             {
                                 extend: 'print',
-                                title: 'Everest Outstanding Report Information',
+                                title: 'SK Hardware Outstanding Report Information',
                                 className: 'btn btn-primary btn-sm',
                                 text: '<i class="fas fa-print mr-2"></i> Print'
                             }

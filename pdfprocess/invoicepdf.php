@@ -41,7 +41,6 @@ $invoiceno = $rowinvoiceinfo['invoiceno'];
 $pono = $rowinvoiceinfo['cuspono']; 
 $salesrepphone = $rowinvoiceinfo['salesrepphone']; 
 
-
 // $sqlpoID = "SELECT `idtbl_porder_invoice` FROM `tbl_porder_invoice` WHERE `tbl_invoice_idtbl_invoice` = '$invoID'";
 // $resultpoID = $conn->query($sqlpoID);
 // $rowpoID = $resultpoID->fetch_assoc();
@@ -61,7 +60,7 @@ $html = '
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EVEREST Hardware Co</title>
+        <title>SK Marketing Co</title>
         <style>
             *{
                 font-size: 10;

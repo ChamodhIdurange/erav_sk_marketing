@@ -23,15 +23,16 @@ $rowpayment=$resultpayment->fetch_assoc();
 $sqlpaymentbank="SELECT * FROM `tbl_grn_payment_detail` WHERE `status`=1 AND `tbl_grn_payment_idtbl_grn_payment`='$paymentinoiceID'";
 $resultpaymentbank=$conn->query($sqlpaymentbank);
 ?>
+
 <table style="width: 100%;">
     <tr>
         <td style="vertical-align: bottom;">Receipt: PR-<?php echo $paymentinoiceID; ?></td>
         <td style="text-align: right;">
             <span style="background: #000;color: #FFF;padding: 5px 15px 5px 15px;border-radius: 5px;">PAYMENT RECEIPT</span>
-            <h5 style="margin-top: 10px;margin-bottom: 0px;">Everest Hardware (Pvt) Ltd Test</h5>
-            Head Office : No.J174/20,Araliya Uyana,Kegalla.<br>
-            Branch : No.107,Paragammana,Kegalla.<br>
-            Tel: 0094-35-2232924 | Fax: 0094-77-9001546<br>support@everesthardware.com
+            <h5 style="margin-top: 10px;margin-bottom: 0px;">SK Marketing (Pvt) Ltd Test</h5>
+            7, 14 Ilupugedara Rd, Kurunegala 60000.<br>
+            Branch : Kurunegala<br>
+            Tel: 070 362 5015 <br>support@skmarketing.com
         </td>
     </tr>
     <tr>

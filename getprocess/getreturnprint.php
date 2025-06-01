@@ -21,6 +21,7 @@ $sumtotal = 0;
 $nettotal = 0;
 $disamount = 0;
 $totaldiscount = 0;
+
 ?>
 <div class="row">
     <div class="col-12 small">
@@ -29,7 +30,7 @@ $totaldiscount = 0;
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <h3 class="font-weight-light m-0">Everest Hardware (Pvt) Ltd</h3>
+                        <h3 class="font-weight-light m-0">SK Marketing (Pvt) Ltd</h3>
                         <h4 class="mt-2">Customer Return</h4>
                     </td>
                     <td>&nbsp;</td>

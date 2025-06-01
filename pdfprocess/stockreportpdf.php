@@ -6,6 +6,7 @@ require_once '../vendor/autoload.php';
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
+
 $options = new Options();
 $options->set('isHtml5ParserEnabled', true);
 $options->set('isPhpEnabled', true);
@@ -73,10 +74,10 @@ if ($resultstock->num_rows > 0) {
                 <tbody>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><strong>EVEREST HARDWARE PRIVATE LIMITED.</strong><br>
+                        <td><strong>SK Marketing PRIVATE LIMITED.</strong><br>
                             363/10/01, Malwatta, Kal-Eliya, Mirigama.<br>
                             Tel: 033 4 950 951, Mobile: 0772710710, FAX: 0372221580<br>
-                            <strong>E-Mail: info@everesthardware.lk  Web: www.everesthardware.lk</strong></td>
+                            <strong>E-Mail: info@skmarketing.lk  Web: www.skmarketing.lk</strong></td>
                         <td>&nbsp;</td>
                     </tr>
                 </tbody>            

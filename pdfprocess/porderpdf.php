@@ -66,7 +66,6 @@ if($confirm == 1 && ($dispatchissue == null || $dispatchissue == 0) && ($deliver
 }else if($confirm == 1 && $dispatchissue == 1 && $delivered == 1){
     $qtyflag = 3;
 }
-
 $sqlporderdetail = "SELECT `p`.`product_name`, `p`.`product_code`, `p`.`idtbl_product`, `d`.`orderqty`, `d`.`confirmqty`, `d`.`discount`, `d`.`dispatchqty`, `d`.`qty`, `d`.`saleprice` FROM `tbl_customer_order_detail` AS `d` LEFT JOIN `tbl_product` AS `p` ON `p`.`idtbl_product`=`d`.`tbl_product_idtbl_product` WHERE `d`.`tbl_customer_order_idtbl_customer_order`='$recordID' AND `d`.`status`=1";
 $resultporderdetail = $conn->query($sqlporderdetail);
 
@@ -76,7 +75,7 @@ $html = '
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EVEREST Hardware Co</title>
+        <title>SK Marketing Co</title>
         <style>
             * {
             font-size: 10px;
@@ -172,7 +171,7 @@ $html = '
                     <table border="0" width="100%" style="margin-top:-43; padding-left:0.3cm;">
                         <tr>
                             <td>
-                                <h3 style="font-weight: bold; font-size: 20px; margin: 0;">EVEREST HARDWARE CO. (PVT) LTD;</h3>
+                                <h3 style="font-weight: bold; font-size: 20px; margin: 0;">SK Marketing CO. (PVT) LTD;</h3>
                                 <h4 style="font-size: 16px; margin-top: 0.2cm;">#363/10/01, Malwatte, Kal-Eliya (Mirigama).</h4>
                             </td>
                             <td>&nbsp;</td>

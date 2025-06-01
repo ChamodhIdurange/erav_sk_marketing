@@ -111,7 +111,6 @@ function menucheck($arraymenu, $menuID){
     }
     return '0';
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +120,7 @@ function menucheck($arraymenu, $menuID){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Everest Hardware - By Erav Technology</title>
+        <title>SK Marketing - By Erav Technology</title>
         <link href="assets/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />

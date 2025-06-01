@@ -22,7 +22,6 @@ $total = $rowinvoice['total'];
 $discount = $rowinvoice['discount'];
 $invoiceno = $rowinvoice['invoiceno'];
 
-
 $sqlpayment="SELECT SUM(`ih`.`payamount`) AS 'paymentmade' FROM `tbl_invoice_payment` AS `ip` LEFT JOIN `tbl_invoice_payment_has_tbl_invoice` AS `ih` ON (`ip`.`idtbl_invoice_payment` = `ih`.`tbl_invoice_payment_idtbl_invoice_payment`) WHERE `ih`.`tbl_invoice_idtbl_invoice`='$invoiceId' GROUP BY `ih`.`tbl_invoice_idtbl_invoice`";
 $resultpayment=$conn->query($sqlpayment);
 $rowpayment=$resultpayment->fetch_assoc();
@@ -37,7 +36,7 @@ $html = '
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EVEREST Hardware Co</title>
+        <title>SK Marketing Co</title>
         <style>
             body {
                 margin: 0;
@@ -90,12 +89,12 @@ $html = '
                         <div class="header-content">
                             <div class="head-label">PAYMENT RECEIPT</div>
                         </div>
-                        <h4>Everest Hardware (Pvt) Ltd Test</h4>
+                        <h4>SK Marketing (Pvt) Ltd Test</h4>
                         <p>
                             Head Office : No.J174/20, Araliya Uyana, Kegalla.<br>
                             Branch : No.107, Paragammana, Kegalla.<br>
-                            Tel: 0094-35-2232924 | Fax: 0094-77-9001546<br>
-                            support@everesthardware.com
+                            Tel: 070 362 5015 <br>
+                            support@skmarketing.com
                         </p>
                     </div>
                 </td>

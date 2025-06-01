@@ -7,6 +7,7 @@ $username = "root";
 $password = "";
 $databse = "erav_sk_marketing";
 
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $databse);
 

@@ -28,7 +28,6 @@ $sqloutstanding = "SELECT
                 AND `p`.`tbl_group_category_idtbl_group_category` IN ($categorylist)
                 ORDER BY `g`.`category` ASC";
 $resultstock = $conn->query($sqloutstanding);
-
 if ($resultstock->num_rows > 0) {
     $c = 1;
     $categoryId = -99;
@@ -41,10 +40,10 @@ if ($resultstock->num_rows > 0) {
 
     echo '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
             <div style="text-align: left;">
-                <h4 style="margin: 0; font-size: 16px;">EVEREST HARDWARE CO. (PVT) LTD</h4>
+                <h4 style="margin: 0; font-size: 16px;">SK Marketing CO. (PVT) LTD</h4>
                 <p style="margin: 3px 0; font-size: 12px;">
                     #363/10/01, Malwatte, Kal-Eliya (Mirigama) <br>
-                    033 4 950 951 | <a href="mailto:info@everesthardware.lk">info@everesthardware.lk</a>
+                    033 4 950 951 | <a href="mailto:info@skmarketing.lk">info@skmarketing.lk</a>
                 </p>
             </div>
             <div>

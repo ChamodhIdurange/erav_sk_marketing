@@ -230,7 +230,6 @@ $(document).ready(function() {
                 if ($.fn.DataTable.isDataTable('#reportTable')) {
                     $('#reportTable').DataTable().destroy();
                 }
-
                 $('#reportTable').DataTable({
                     "dom": "<'row'<'col-sm-5'B><'col-sm-2'l><'col-sm-5'f>>" +
                         "<'row'<'col-sm-12'tr>>" +
@@ -238,20 +237,20 @@ $(document).ready(function() {
                     "buttons": [{
                             extend: 'csv',
                             className: 'btn btn-success btn-sm',
-                            title: 'Everest Sale Report Information',
+                            title: 'SK Hardware Sale Report Information',
                             text: '<i class="fas fa-file-csv mr-2"></i> CSV',
                             footer: true
                         },
                         {
                             extend: 'pdf',
                             className: 'btn btn-danger btn-sm',
-                            title: 'Everest Sale Report Information',
+                            title: 'SK Hardware Sale Report Information',
                             text: '<i class="fas fa-file-pdf mr-2"></i> PDF',
                             footer: true
                         },
                         {
                             extend: 'print',
-                            title: 'Everest Sale Report Information',
+                            title: 'SK Hardware Sale Report Information',
                             className: 'btn btn-primary btn-sm',
                             text: '<i class="fas fa-print mr-2"></i> Print',
                             footer: true

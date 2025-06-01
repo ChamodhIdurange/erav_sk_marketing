@@ -10,6 +10,7 @@ $roworder=$resultorder->fetch_assoc();
 
 $orderdate=$roworder['orderdate'];
 
+
 $sqlordercount="SELECT COUNT(*) AS `count` FROM `tbl_porder` WHERE `orderdate`='$orderdate'";
 $resultordercount=$conn->query($sqlordercount);
 $rowordercount=$resultordercount->fetch_assoc();
@@ -62,7 +63,7 @@ while($rowaccessories=$resultaccessories->fetch_assoc()){
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <h3 class="font-weight-light m-0">Everest Hardware (Pvt) Ltd</h3>
+                        <h3 class="font-weight-light m-0">SK Marketing (Pvt) Ltd</h3>
                         <h4 class="mt-2">Purchsing Order</h4>
                     </td>
                     <td>&nbsp;</td>
