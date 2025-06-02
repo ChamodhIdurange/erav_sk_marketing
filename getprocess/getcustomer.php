@@ -44,5 +44,13 @@ $obj->paymentpersonmobile=$row['paymentpersonmobile'];
 $obj->deliverypersonname=$row['deliverypersonname'];
 $obj->deliverypersonmobile=$row['deliverypersonmobile'];
 
+$obj->customercode=$row['customercode'];
+$obj->city=$row['city'];
+$obj->location=$row['location'];
+$obj->creditDays=$row['creditDays'];
+$obj->sinceDate=$row['sinceDate'];
+$obj->whatsappContact=$row['whatsappContact'];
+$obj->otherContact=$row['otherContact'];
+
 echo json_encode($obj);
 ?>

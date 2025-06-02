@@ -8,6 +8,17 @@ $recordOption=$_POST['recordOption'];
 if(!empty($_POST['recordID'])){$recordID=$_POST['recordID'];}
 
 $cusName=$_POST['cusName'];
+
+$cusCode=$_POST['cusCode'];
+$cusCity=$_POST['cusCity'];
+$cusLocation=$_POST['cusLocation'];
+$cusCreditDays=$_POST['cusCreditDays'];
+$cusSinceDate=$_POST['cusSinceDate'];
+$cusRoute=$_POST['cusRoute'];
+$cusWhatsappNo=$_POST['cusWhatsappNo'];
+$cusOtherNo=$_POST['cusOtherNo'];
+
+
 $cusType=$_POST['cusType'];
 $cusMobile=$_POST['cusMobile'];
 $cusNic=$_POST['cusNic'];
@@ -166,7 +177,8 @@ if(!empty($_FILES["productimage"]["name"])){
 $updatedatetime=date('Y-m-d h:i:s');
 
 if($recordOption==1){
-    $query = "INSERT INTO `tbl_customer`(`type`, `name`, `nic`, `phone`, `email`, `address`, `vat_num`, `s_vat`, `numofvisitdays`, `creditlimit`, `credittype`, `creditperiod`, `emergencydate`, `status`, `updatedatetime`, `tbl_user_idtbl_user`, `tbl_area_idtbl_area`, `remarks`, `ref`, `comment`, `paymentpersonname`, `paymentpersonmobile`, `deliverypersonname`, `deliverypersonmobile`, `buisnesscopyimagepath`, `dealerboardimagepath`, `selfieimagepath`, `productimagepath`, `formcode`) VALUES ('$cusType', '$cusName', '$cusNic', '$cusMobile', '$cusEmail', '$address', '$cusVatNum', '$cusSVat', '$cusNoVisit', '$cusCreditlimit','$cuscredittype','$cuscreditdays','','1','$updatedatetime', '$userID', '$cusArea', '$remarks', '$ref', '$comment', '$personpayment', '$paymentmobile', '$deliveryperson', '$deliverymobile', '$buisnessimagepath', '$dealerboardimagepath', '$selfieimagepath', '$productimagepath', '$formcode')";
+
+    $query = "INSERT INTO `tbl_customer`(`type`, `name`, `nic`, `phone`, `email`, `address`, `vat_num`, `s_vat`, `numofvisitdays`, `creditlimit`, `credittype`, `creditperiod`, `emergencydate`, `status`, `updatedatetime`, `tbl_user_idtbl_user`, `tbl_area_idtbl_area`, `remarks`, `ref`, `comment`, `paymentpersonname`, `paymentpersonmobile`, `deliverypersonname`, `deliverypersonmobile`, `buisnesscopyimagepath`, `dealerboardimagepath`, `selfieimagepath`, `productimagepath`, `formcode`, `customercode`, `city`, `location`, `creditDays`, `sinceDate`, `whatsappContact`, `otherContact`, `tbl_route_idtbl_route`) VALUES ('$cusType', '$cusName', '$cusNic', '$cusMobile', '$cusEmail', '$address', '$cusVatNum', '$cusSVat', '$cusNoVisit', '$cusCreditlimit','$cuscredittype','$cuscreditdays','','1','$updatedatetime', '$userID', '$cusArea', '$remarks', '$ref', '$comment', '$personpayment', '$paymentmobile', '$deliveryperson', '$deliverymobile', '$buisnessimagepath', '$dealerboardimagepath', '$selfieimagepath', '$productimagepath', '$formcode', '$cusCode', '$cusCity', '$cusLocation', '$cusCreditDays', '$cusSinceDate', '$cusWhatsappNo', '$cusOtherNo', '$cusRoute')";
     if($conn->query($query)==true){
         $customerID=$conn->insert_id;
 
@@ -187,7 +199,7 @@ if($recordOption==1){
     }
 }
 else{
-    $update="UPDATE `tbl_customer` SET `type`='$cusType',`name`='$cusName',`nic`='$cusNic',`phone`='$cusMobile',`email`='$cusEmail',`address`='$address',`vat_num`='$cusVatNum',`s_vat`='$cusSVat',`numofvisitdays`='$cusNoVisit',`creditlimit`='$cusCreditlimit',`credittype`='$cuscredittype',`creditperiod`='$cuscreditdays',`updatedatetime`='$updatedatetime',`tbl_user_idtbl_user`='$userID',`tbl_area_idtbl_area`='$cusArea',`remarks`='$remarks',`ref`='$ref',`comment`='$comment',`paymentpersonname`='$personpayment' ,`paymentpersonmobile`='$paymentmobile' ,`deliverypersonname`='$deliveryperson' ,`deliverypersonmobile`='$deliverymobile',`formcode`='$formcode' WHERE `idtbl_customer`='$recordID'";
+    $update="UPDATE `tbl_customer` SET `type`='$cusType',`name`='$cusName',`nic`='$cusNic',`phone`='$cusMobile',`email`='$cusEmail',`address`='$address',`vat_num`='$cusVatNum',`s_vat`='$cusSVat',`numofvisitdays`='$cusNoVisit',`creditlimit`='$cusCreditlimit',`credittype`='$cuscredittype',`creditperiod`='$cuscreditdays',`updatedatetime`='$updatedatetime',`tbl_user_idtbl_user`='$userID',`tbl_area_idtbl_area`='$cusArea',`remarks`='$remarks',`ref`='$ref',`comment`='$comment',`paymentpersonname`='$personpayment' ,`paymentpersonmobile`='$paymentmobile' ,`deliverypersonname`='$deliveryperson' ,`deliverypersonmobile`='$deliverymobile',`formcode`='$formcode', `customercode`='$cusCode', `city`='$cusCity', `location`='$cusLocation', `creditDays`='$cusCreditDays', `sinceDate`='$cusSinceDate', `whatsappContact`='$cusWhatsappNo', `otherContact`='$cusOtherNo', `tbl_route_idtbl_route`='$cusRoute' WHERE `idtbl_customer`='$recordID'";
     if($conn->query($update)==true){
         $deletedayslist="DELETE FROM `tbl_customer_visitdays` WHERE `tbl_customer_idtbl_customer`='$recordID'";
         $conn->query($deletedayslist);

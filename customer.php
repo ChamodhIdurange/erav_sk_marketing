@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
 </head>
 <?php 
-
 include "include/header.php";  
 
 $sql="SELECT `idtbl_customer`, `name`, `nic`, `phone`, `status`, `type`, `tbl_area_idtbl_area` FROM `tbl_customer` WHERE `status` IN (1,2)";
@@ -11,6 +10,12 @@ $result =$conn-> query($sql);
 
 $sqlemployee="SELECT `idtbl_employee`, `name` FROM `tbl_employee` WHERE `status` IN (1,2)";
 $resultemployee =$conn-> query($sqlemployee); 
+
+$sqlcustomertype="SELECT `idtbl_customer_type`, `customertype` FROM `tbl_customer_type` WHERE `status` IN (1,2)";
+$resultcustomertype =$conn-> query($sqlcustomertype); 
+
+$sqlroute="SELECT `idtbl_route`, `route` FROM `tbl_route` WHERE `status` IN (1,2)";
+$resultroute =$conn-> query($sqlroute); 
 
 $productarray=array();
 $sqlproduct="SELECT `idtbl_product`, `product_name` FROM `tbl_product` WHERE `status`=1";
@@ -61,15 +66,21 @@ include "include/topnavbar.php";
                                         <input type="text" class="form-control form-control-sm" id="cusName"
                                             name="cusName" required>
                                     </div>
+                                    <div class="form-group mb-1">
+                                        <label class="small font-weight-bold text-dark">Customer Code*</label>
+                                        <input type="text" class="form-control form-control-sm" id="cusCode"
+                                            name="cusCode" required>
+                                    </div>
                                     <div class="form-row mb-1">
                                         <div class="col">
-                                            <label class="small font-weight-bold text-dark">Customer Type*</label>
+                                            <label class="small font-weight-bold text-dark">Customer Type</label>
                                             <select name="cusType" id="cusType" class="form-control form-control-sm"
                                                 required>
                                                 <option value="">Select</option>
-                                                <option value="1">Whole Saler</option>
-                                                <option value="2">Retail</option>
-                                                <!-- <option value="3">Laugfs Agent</option> -->
+                                                <?php if($resultcustomertype->num_rows > 0) {while ($rowcustomertype = $resultcustomertype-> fetch_assoc()) { ?>
+                                                <option value="<?php echo $rowcustomertype['idtbl_customer_type'] ?>">
+                                                    <?php echo $rowcustomertype['customertype'] ?></option>
+                                                <?php }} ?>
                                             </select>
                                         </div>
                                         <div class="col">
@@ -96,10 +107,47 @@ include "include/topnavbar.php";
                                                 name="cusMobile" required>
                                         </div>
                                     </div>
+                                    <div class="form-row mb-1">
+                                        <div class="col">
+                                            <label class="small font-weight-bold text-dark">Whatsapp No*</label>
+                                            <input type="text" class="form-control form-control-sm" id="cusWhatsappNo"
+                                                name="cusWhatsappNo" required>
+                                        </div>
+                                        <div class="col">
+                                            <label class="small font-weight-bold text-dark">Other No*</label>
+                                            <input type="text" class="form-control form-control-sm" id="cusOtherNo"
+                                                name="cusOtherNo" required>
+                                        </div>
+                                    </div>
                                     <div class="form-group mb-1">
                                         <label class="small font-weight-bold text-dark">Address</label>
                                         <textarea class="form-control form-control-sm" id="address"
                                             name="address"></textarea>
+                                    </div>
+                                    <div class="form-row mb-1">
+                                        <div class="col">
+                                            <label class="small font-weight-bold text-dark">City</label>
+                                            <input type="text" class="form-control form-control-sm" id="cusCity"
+                                                name="cusCity" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-1">
+                                        <div class="col">
+                                            <label class="small font-weight-bold text-dark">Location</label>
+                                            <input type="text" class="form-control form-control-sm" id="cusLocation"
+                                                name="cusLocation">
+                                        </div>
+                                        <div class="col">
+                                            <label class="small font-weight-bold text-dark">Route</label>
+                                            <select name="cusRoute" id="cusRoute" class="form-control form-control-sm"
+                                                required>
+                                                <option value="">Select</option>
+                                                <?php if($resultroute->num_rows > 0) {while ($rowroute = $resultroute-> fetch_assoc()) { ?>
+                                                <option value="<?php echo $rowroute['idtbl_route'] ?>">
+                                                    <?php echo $rowroute['route'] ?></option>
+                                                <?php }} ?>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-row mb-1">
                                         <div class="col">
@@ -164,11 +212,24 @@ include "include/topnavbar.php";
                                                 name="cusCreditlimit" placeholder="">
                                         </div>
                                         <div class="col">
+                                            <label class="small font-weight-bold text-dark">Credit days</label>
+                                            <input type="text" class="form-control form-control-sm" id="cusCreditDays"
+                                                name="cusCreditDays" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-1">
+                                        <div class="col">
+                                            <label class="small font-weight-bold text-dark">Since</label>
+                                            <input type="date" class="form-control form-control-sm" id="cusSinceDate"
+                                                name="cusSinceDate" placeholder="">
+                                        </div>
+                                        <div class="col">
                                             <label class="small font-weight-bold text-dark">No of visit days</label>
                                             <input type="text" class="form-control form-control-sm" id="cusNoVisit"
                                                 name="cusNoVisit" placeholder="">
                                         </div>
                                     </div>
+                                  
                                     <div class="form-group mb-1">
                                         <label class="small font-weight-bold text-dark">Remarks</label>
                                         <input type="text" class="form-control form-control-sm" id="remarks"
@@ -260,6 +321,7 @@ include "include/topnavbar.php";
                                             <tr>
                                                 <th>#</th>
                                                 <th>Name</th>
+                                                <th>Code</th>
                                                 <th>Area</th>
                                                 <th>Address</th>
                                                 <th>Type</th>
@@ -575,7 +637,10 @@ include "include/topnavbar.php";
                     "data": "idtbl_customer"
                 },
                 {
-                    "data": "customer"
+                    "data": "name"
+                },
+                {
+                    "data": "customercode"
                 },
                 {
                     "data": "area"
@@ -615,9 +680,9 @@ include "include/topnavbar.php";
                     "data": null,
                     "render": function (data, type, full) {
                         var button = '';
-                        button += '<a href="customerprofile.php?record=' + full[
-                                'idtbl_customer'] +
-                            '&type=1"  target="_self" class="btn btn-outline-primary btn-sm "><i class="far fa-eye"></i></a>'
+                        // button += '<a href="customerprofile.php?record=' + full[
+                        //         'idtbl_customer'] +
+                        //     '&type=1"  target="_self" class="btn btn-outline-primary btn-sm mr-1"><i class="far fa-eye"></i></a>'
                         // if (full['type'] == 2) {
                         //     button +=
                         //         '<button class="btn btn-outline-dark btn-sm btnAddProductStock mr-1 ';
@@ -645,6 +710,20 @@ include "include/topnavbar.php";
                             // button+='<button data-url="process/statuscustomer.php?record='+full['idtbl_customer']+'&type=4"  data-actiontype="4" class="btn btn-outline-dark btn-sm mr-1 btntableaction"><i class="far fa-calendar-check"></i></button>';
                         }else if(full['status']==2 && statuscheck==1){
                             button+='<button type="button" data-url="process/statuscustomer.php?record='+full['idtbl_customer']+'&type=1" data-actiontype="1" class="btn btn-warning btn-sm mr-1 text-light btntableaction"><i class="fas fa-times"></i></button>';
+                        }
+                        if(full['is_verified']==1 && statuscheck==1){
+                            button+='<button type="button" data-url="process/statusisverified.php?record='+full['idtbl_customer']+'&type=0" data-actiontype="2" class="btn btn-success btn-sm mr-1 btntableaction"><i class="fa fa-pause"></i></button>';
+                            // button+='<button type="button" class="btn btn-outline-pink btn-sm mr-1 btnclose ';if(deletecheck==0){button+='d-none';}button+='" id="'+full['idtbl_customer']+'"><i class="fas fa-times-circle"></i></button>';
+                            // button+='<button data-url="process/statuscustomer.php?record='+full['idtbl_customer']+'&type=4"  data-actiontype="4" class="btn btn-outline-dark btn-sm mr-1 btntableaction"><i class="far fa-calendar-check"></i></button>';
+                        }else if(full['is_verified']==0 && statuscheck==1){
+                            button+='<button type="button" data-url="process/statusisverified.php?record='+full['idtbl_customer']+'&type=1" data-actiontype="1" class="btn btn-danger btn-sm mr-1 text-light btntableaction"><i class="fa fa-pause"></i></button>';
+                        }
+                        if(full['enable_for_porder']==1 && statuscheck==1){
+                            button+='<button type="button" data-url="process/statusenableforpo.php?record='+full['idtbl_customer']+'&type=0" data-actiontype="2" class="btn btn-success btn-sm mr-1 btntableaction"><i class="fa fa-hourglass-start"></i></button>';
+                            // button+='<button type="button" class="btn btn-outline-pink btn-sm mr-1 btnclose ';if(deletecheck==0){button+='d-none';}button+='" id="'+full['idtbl_customer']+'"><i class="fas fa-times-circle"></i></button>';
+                            // button+='<button data-url="process/statuscustomer.php?record='+full['idtbl_customer']+'&type=4"  data-actiontype="4" class="btn btn-outline-dark btn-sm mr-1 btntableaction"><i class="far fa-calendar-check"></i></button>';
+                        }else if(full['enable_for_porder']==0 && statuscheck==1){
+                            button+='<button type="button" data-url="process/statusenableforpo.php?record='+full['idtbl_customer']+'&type=1" data-actiontype="1" class="btn btn-warning btn-sm mr-1 text-light btntableaction"><i class="fa fa-hourglass-start"></i></button>';
                         }
                         if(deletecheck==1){
                             button+='<button type="button" data-url="process/statuscustomer.php?record='+full['idtbl_customer']+'&type=3" data-actiontype="3" class="btn btn-danger btn-sm text-light btntableaction"><i class="fas fa-trash-alt"></i></button>';
@@ -690,6 +769,14 @@ include "include/topnavbar.php";
                         $('#paymentmobile').val(obj.paymentpersonmobile);
                         $('#deliveryperson').val(obj.deliverypersonname);
                         $('#deliverymobile').val(obj.deliverypersonmobile);
+                        
+                        $('#cusCode').val(obj.customercode);
+                        $('#cusCity').val(obj.city);
+                        $('#cusLocation').val(obj.location);
+                        $('#cusCreditDays').val(obj.creditDays);
+                        $('#cusSinceDate').val(obj.sinceDate);
+                        $('#cusWhatsappNo').val(obj.whatsappContact);
+                        $('#cusOtherNo').val(obj.otherContact);
 
                         if (obj.credittype == 2) {
                             $('#cuscreditdays').prop('readonly', false);
@@ -1091,4 +1178,6 @@ include "include/topnavbar.php";
     }
 </script>
 <?php include "include/footer.php"; ?>
+
+
 
